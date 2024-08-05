@@ -1,0 +1,234 @@
+body {
+    background: linear-gradient(135deg, #0b0c10, #1f2833);
+    color: #c5c6c7;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: #66fcf1;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #45a29e;
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #66fcf1;
+}
+
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #66fcf1;
+    margin-bottom: 1.5rem;
+}
+
+.about-section p,
+.services-section ul,
+.portfolio-section .portfolio-grid,
+.contact-section form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.services-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services-section ul li {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0;
+    transition: background 0.3s ease;
+}
+
+.portfolio-item:hover p {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.contact-section form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input,
+.contact-section form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #c5c6c7;
+    font-size: 1rem;
+}
+
+.contact-section form input:focus,
+.contact-section form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #66fcf1;
+}
+
+.contact-section form button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #45a29e;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section form button:hover {
+    background-color: #66fcf1;
+}
+
+footer {
+    padding: 1rem 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    color: #c5c6c7;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.social-media a {
+    color: #66fcf1;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #45a29e;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* تأثير ثلاثي الأبعاد للصور */
+.portfolio-item img {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.portfolio-item:hover img {
+    transform: rotateY(20deg) translateZ(30px);
+}
+
+/* تأثير الظل والإضاءة على العناوين */
+h2 {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* تأثير النص المضيء */
+.about-section p,
+.services-section ul,
+.contact-section form {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* تأثير الزر ثلاثي الأبعاد */
+.contact-section form button {
+    position: relative;
+    perspective: 1000px;
+}
+
+.contact-section form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #45a29e, #66fcf1);
+    transform: translateZ(-10px);
+    transition: transform 0.3s ease;
+}
+
+.contact-section form button:hover::before {
+    transform: translateZ(-5px);
+}
